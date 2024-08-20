@@ -2,7 +2,7 @@ import sys
 from rps import rps
 from guess_number import guess_number
 from zigzag import zig_zag_game
-
+from snake import snake_game
 def play_game(name='PlayerOne'):
     welcome_back = False
 
@@ -11,10 +11,10 @@ def play_game(name='PlayerOne'):
             print(f"\n{name}, welcome back to the Arcade menu.")
 
         playerchoice = input(
-            "\nPlease choose a game:\n1 = Rock Paper Scissors\n2 = Guess My Number\n3.Zigzag game\n\nOr press \"x\" to exit the Arcade\n\n"
+            "\nPlease choose a game:\n1 = Rock Paper Scissors\n2 = Guess My Number\n3 = Zigzag game\n4 = Snake\n\nOr press \"x\" to exit the Arcade\n\n"
         )
 
-        if playerchoice not in ["1", "2","3", "x"]:
+        if playerchoice not in ["1", "2","3","4", "x"]:
             print(f"\n{name}, please enter 1, 2, 3 or x.")
             return play_game(name)
 
@@ -29,6 +29,9 @@ def play_game(name='PlayerOne'):
         elif playerchoice == "3":
             zig_zag = zig_zag_game(name)
             zig_zag()
+        elif playerchoice == "4":
+            snake = snake_game()
+            snake()
         else:
             print("\nSee you next time!\n")
             sys.exit(f"Bye {name}! 👋")
